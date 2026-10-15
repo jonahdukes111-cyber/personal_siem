@@ -6,7 +6,7 @@ Here, I will describe the configuration, installation, and infrastructure involv
 
 - I hosted this lab utilizing VMWare Workstation Pro. I used two virtual machines, one used to host an Ubuntu 24.04 Server, and another one to host a Windows 11 machine.
 
-- The goal of this lab was to make a centralized SIEM, monitor Windows process execution & security events, implement custom detection rules & alerts, and provide a foundation for Python incident response implementation.
+- The goal of this lab is to make a centralized SIEM, monitor a Windows Endpoint's process execution & security events, implement custom detection rules & alerts, and provide a foundation for Python incident response implementation.
   
 ## Physical Host Specifications
 This hardware is what hosted the virtual enviroment.
