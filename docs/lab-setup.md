@@ -127,11 +127,15 @@ Enrolling the Windows 11 VM's agent into the fleet server also required me to tr
 
 Lab VM's are all operational, Elastic stack is functional, and telemetry is being collected and logged.
 
-The first detection rule based on MITRE ATT&CK T1059.001 (Encoded powershell command execution) has been created and is functional. The second detection rule is based on the MITRE ATT&CK T1110 (Brute forcing).
+# Goals
 
-I plan on adding more detection rules based on MITRE ATT&CK techniques, and adding automated alert investigation via Kibana.
+ - The first detection rule based on MITRE ATT&CK T1059.001 (Encoded powershell command execution) has been created and is functional. The second detection rule is based on the MITRE ATT&CK T1110 (Brute forcing).
 
-I also want to create an automated incident response and detection program using Python.
+ - I plan on adding more detection rules based on MITRE ATT&CK techniques, and adding automated alert investigation via Kibana.
+
+ - I want to create an automated incident response and detection program using Python.
+
+ - Potentially add more nodes to my cluster for redundancy.
 
 
 
