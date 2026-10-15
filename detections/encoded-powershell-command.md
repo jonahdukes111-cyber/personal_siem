@@ -42,7 +42,7 @@ When I tried implementing this originally, the index did not match any Elasticse
 **Screenshots:**
  - The generated security alert:
    
-<img width="1914" height="939" alt="Screenshot 2026-10-15 134254" src="https://github.com/user-attachments/assets/a44cef35-5806-45e1-bbdf-bb1a2b63db7c" />
+<img width="2557" height="1298" alt="Screenshot 2026-10-15 143305" src="https://github.com/user-attachments/assets/5482a67f-1c3e-41b5-8bdb-8a589f30ff67" />
  
  - Rule configuration:
    
