@@ -27,7 +27,7 @@ This hardware is what hosted the virtual enviroment.
 |Allocated Memory|8GB|
 |Storage|60GB Allocated|
 |Network Adapter|VMWare NAT|
-|IP Address|192.168.63.130 (DHCP configured)|
+|IP Address|192.168.63.130 (NAT)|
 
 **Installed Software:**
   - Elasticsearch 9.5.5
@@ -44,7 +44,7 @@ This VM contained the core functionality of the SIEM. Elasticsearch is used for 
 |Allocated Memory|8GB|
 |Storage|64GB Allocated|
 |Network Adapter|VMWare NAT|
-|IP Address|192.168.63.131 (DHCP configured)|
+|IP Address|192.168.63.131 (NAT)|
 
 **Installed Software:**
   - Elastic Agent
