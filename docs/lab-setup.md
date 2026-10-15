@@ -131,7 +131,6 @@ I plan on adding more detection rules based on MITRE ATT&CK techniques, and addi
 
 I also want to create an automated incident response and detection program using Python.
 
-I also plan on 
 
 
 
