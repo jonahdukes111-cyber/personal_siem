@@ -2,11 +2,11 @@
 
 Here, I will describe the configuration, installation, and infrastructure involved in this self-hosted SIEM (Security Incident and Event Management)/SOC lab.
 
-- I decided to use Elastic Solutions for this lab. I utilized Elasticsearch, Kibana (Dashboard/monitoring), Fleet Server, and Elastic Defend (endpoint monitoring) to analyze and detect suspicious activity on a Windows 11 system.
+- I decided to use Elastic Solutions for this lab. I utilized Elasticsearch, Kibana (Dashboard/monitoring), Elastic Agents, and Elastic Defend (endpoint monitoring) to analyze and detect suspicious activity on a Windows 11 system.
 
 - I hosted this lab utilizing VMWare Workstation Pro. I used two virtual machines, one used to host an Ubuntu 24.04 Server, and another one to host a Windows 11 machine.
 
-- The goal of this lab was to make a centralized SIEM, monitor Windows process execution & security events, implement custom detection rules & alerts, provide a foundation for Python incident response implementation.
+- The goal of this lab was to make a centralized SIEM, monitor Windows process execution & security events, implement custom detection rules & alerts, and provide a foundation for Python incident response implementation.
   
 ## Physical Host Specifications
 This hardware is what hosted the virtual enviroment.
@@ -89,14 +89,15 @@ The URL for the fleet server used in this lab: `https://192.168.63.130:8220`
 
 Once the server was established, I viewed its health on the Kibana dashboard via the path: `Kibana -> Management -> Fleet -> Agents`. It was confirmed to be healthy, so I continued on with the endpoint configuration.
 # Windows VM Endpoint Configuration
-Elastic Agent was installed on this virtual machine, and enrolled into fleet on Kibana. This was the command used: 
-    ```
+Elastic Agent was installed on this virtual machine, and enrolled into my fleet on Kibana. This was the command used: 
+
+    
     & "C:\Program Files\Elastic\Agent\elastic-agent.exe" enroll `
     --url=https://192.168.63.130:8220 `
     --enrollment-token=<MY_TOKEN> `
     --insecure
-    ``` 
-     - Because the lab is isolated, I used a self-signed TLS certificate. I used the --insecure argument when enrolling the agent as my Windows VM endpoint did not trust the certificate given from the Fleet Server.
+    
+ - I used a self-signed TLS certificate. Because the lab is isolated, I used the --insecure argument when enrolling the agent as my Windows VM endpoint did not trust the certificate given from the Fleet Server on the Ubuntu VM.
 
 **Elastic Defend**
 Elastic defend was added as an integration on the policy for the Windows endpoint agent. This integration logs activity relevant to system security according to the OS.
@@ -125,9 +126,9 @@ Enrolling the Windows 11 VM's agent into the fleet server also required me to tr
 
 Lab VM's are all operational, Elastic stack is functional, and telemetry is being collected and logged.
 
-The first detection rule based on MITRE ATT&CK T1059.001 (Encoded powershell command execution) has been created and is functional.
+The first detection rule based on MITRE ATT&CK T1059.001 (Encoded powershell command execution) has been created and is functional. The second detection rule is based on the MITRE ATT&CK T1110 (Brute forcing).
 
-I plan on adding more detection rules based on MITRE ATT&CK techniques, and adding automated alert investigation.
+I plan on adding more detection rules based on MITRE ATT&CK techniques, and adding automated alert investigation via Kibana.
 
 I also want to create an automated incident response and detection program using Python.
 
