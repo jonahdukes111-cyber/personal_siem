@@ -116,9 +116,10 @@ To verify that the Windows VM was successfully added as an endpoint, I used this
 
 # Troubleshooting during setup
 In my original plan for this lab, I was going to use Oracle as my VM software, but I repeatedly ran into virtualization errors so I decided to go with VMWare Workstation Pro.
- - Wazuh was also going to be my security platform of choice, but installation on the Oracle VM kept running into issues during the application execution on the Oracle VM - particularly the Wazuh server.
+ - Wazuh was also going to be my security platform of choice. I ran into issues, though, during it's installation on the Oracle VM. After running the executable installation file, I kept running into issues during setup - specifically with Wazuh Server.
 
 Another issue I faced was initially creating the Kibana fleet server. I had to generate, and add encryption keys to the Kibana.yaml configuration file to get past this as instructed in the documentation.
+ - This is to keep potentially sensitive settings secure.
 
 Enrolling the Windows 11 VM's agent into the fleet server also required me to troubleshoot the `x509: certificate signed by unknown authority` Elastic Stack error. I used the --insecure argument in powershell to disable the TLS certificate verification. I only did this due to it being an isolated lab, and wouldn't do this in an actual production environment as it can be exploited very easily.
 
