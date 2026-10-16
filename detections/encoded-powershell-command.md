@@ -11,7 +11,7 @@
    - Rule Severity: Medium
 
    - MITRE ATT&CK: T1059.001 -- Powershell Technique
-   - 
+     
 **Index Pattern:**
 
 `logs-endpoint.events.process-*`
