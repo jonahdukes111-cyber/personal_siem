@@ -1,6 +1,6 @@
 # Objective  
  - Determine whether or not a process has been spawned/started with a PPID not matching the actual process's PID that started it.
- - 
+   
 **Detection Logic**
  - Rule Name: `Potential Parent PID Spoofing`
  - Rule Type: ES|QL
